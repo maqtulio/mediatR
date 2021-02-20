@@ -1,8 +1,8 @@
-import { MediatR } from './../src/index.js';
+import { MediatR } from '../src/index.js/index.js.js';
 import { TestCommand } from './testHandler.js';
 import assert from 'assert';
 import { RegisteredHandlers } from '../src/decorators.js';
-import { registerHandlers } from '../src/index.js';
+import { registerHandlers } from '../src/index.js/index.js.js';
 
 describe('Testing handlers', function () {
   it('should register one handler', async function () {

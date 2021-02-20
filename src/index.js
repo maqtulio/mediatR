@@ -1,8 +1,8 @@
+import "reflect-metadata";
 export { CommandHandler } from './decorators.js';
 import { RegisteredHandlers } from './decorators.js';
 export { IHandler } from './IHandler.js';
 export { registerHandlers } from "./registerDecorators.js";
-import "reflect-metadata";
 export class MediatR {
     /**
      * Mediator class.

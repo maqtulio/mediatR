@@ -1,8 +1,8 @@
-export { CommandHandler } from './decorators.js';
-import { RegisteredHandlers } from './decorators.js';
-export { IHandler } from './IHandler.js';
-export { registerHandlers } from "./registerDecorators.js";
 import "reflect-metadata"
+import { RegisteredHandlers } from './decorators.js';
+export { CommandHandler } from './decorators.js';
+export { registerHandlers } from "./registerDecorators.js";
+export { IHandler } from './IHandler.js';
 
 export class MediatR {
     registeredCommandsNames: string[] = [];
