@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npm i --save-dev @types/mocha",
+    "test": "tsc && mocha",
     "test:ci": "",
     "start": "tsc"
   },

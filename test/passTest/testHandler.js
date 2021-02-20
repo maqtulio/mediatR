@@ -4,14 +4,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { IHandler } from '../src/IHandler.js';
-import { CommandHandler } from '../src/decorators.js';
-export class TestCommand {
-    constructor() {
-        this.doNothing = "Please do nothing";
-    }
-}
-let TestCommandHandler = class TestCommandHandler extends IHandler {
+import { IHandler } from '../../src/index.js';
+import { CommandHandler } from '../../src/decorators.js';
+import { DecoratedTestCommand } from './testCommand.js';
+let DecoratedTestCommandHandler = class DecoratedTestCommandHandler extends IHandler {
     constructor() {
         super(...arguments);
         this.ReturnsExample = "I'll return a string like this one";
@@ -26,7 +22,7 @@ let TestCommandHandler = class TestCommandHandler extends IHandler {
         }
     }
 };
-TestCommandHandler = __decorate([
-    CommandHandler(TestCommand)
-], TestCommandHandler);
-export { TestCommandHandler };
+DecoratedTestCommandHandler = __decorate([
+    CommandHandler(DecoratedTestCommand)
+], DecoratedTestCommandHandler);
+export { DecoratedTestCommandHandler };

@@ -1,20 +1,25 @@
 import "reflect-metadata";
-import { RegisteredHandlers } from './decorators.js';
-export { CommandHandler } from './decorators.js';
-export { registerHandlers } from "./registerDecorators.js";
-export { IHandler } from './IHandler.js';
+import { registeredHandlers, registeredCommands } from './decorators.js';
+import { ICommand } from "./ICommand.js";
 export class MediatR {
     /**
      * Mediator class.
      */
     constructor() {
         this.registeredCommandsNames = [];
-        this.registeredCommandsNames = Object.keys(RegisteredHandlers);
+        this.registeredCommandsNames = Object.keys(registeredHandlers);
     }
     async Send(command) {
+        if (!(command instanceof ICommand) || !Object.keys(registeredCommands).includes(command.constructor.name)) {
+            throw new Error(`Please decorate your command and extend ICommand => ${command.constructor.name}.`);
+        }
         if (!this.registeredCommandsNames.includes(command.constructor.name)) {
             throw new Error(`Handler for the command ${command.constructor.name} didn't get registred.`);
         }
-        return new RegisteredHandlers[command.constructor.name]().Handle(command);
+        return new registeredHandlers[command.constructor.name]().Handle(command);
     }
 }
+export { CommandHandler, Command, registeredCommands } from './decorators.js';
+export { registerHandlers } from "./registerDecorators.js";
+export { IHandler } from './IHandler.js';
+export { ICommand } from "./ICommand.js";
