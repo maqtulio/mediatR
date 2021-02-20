@@ -28,11 +28,3 @@ export const Command = () => {
         registeredCommands[target.name] = target;
     };
 };
-/**
- * @name schema Joi schema to validate command before executing.
- */
-export const CommandValidator = (schema) => {
-    return function (target) {
-        registeredCommandValidators[target.name] = schema;
-    };
-};

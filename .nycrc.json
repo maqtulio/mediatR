@@ -1,0 +1,25 @@
+{
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "check-coverage": true,
+    "extension": [
+      ".ts",
+      ".tsx",
+      ".js"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "test/",
+      "node_modules/",
+      "coverage/"
+    ],
+    "reporter": [
+      "html","text"
+    ],
+    "all": true,
+    "watermarks": {
+        "lines": [80, 95],
+        "functions": [80, 95],
+        "branches": [80, 95],
+        "statements": [80, 95]
+      }
+  }

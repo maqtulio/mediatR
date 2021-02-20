@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import Joi from "joi"
 import { ICommand } from "./ICommand.js";
 import { IHandler } from "./IHandler.js";
 
@@ -27,15 +26,5 @@ export const Command = () => {
             throw new Error(`Decorated command ${target.name} must extend ICommand`)
         };
         registeredCommands[target.name] = target;
-    };
-};
-
-
-/**
- * @name schema Joi schema to validate command before executing. 
- */
-export const CommandValidator = (schema: Joi.Schema) => {
-    return function (target: any) {
-        registeredCommandValidators[target.name] = schema;
     };
 };
