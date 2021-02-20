@@ -1,1 +1,1 @@
-export { MediatR, IHandler, registerHandlers, CommandHandler } from './src/index.js';
+export { MediatR, IHandler, registerHandlers, CommandHandler, registeredCommands } from './src/index.js';
