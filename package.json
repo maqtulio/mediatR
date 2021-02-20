@@ -1,6 +1,6 @@
 {
   "name": "mediatr2",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Mediator to help CQRS implementation.",
   "main": "index.js",
   "type": "module",
