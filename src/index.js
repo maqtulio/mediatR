@@ -19,7 +19,7 @@ export class MediatR {
         return new registeredHandlers[command.constructor.name]().Handle(command);
     }
 }
-export { CommandHandler, Command, registeredCommands } from './decorators.js';
+export { CommandHandler, Command, registeredCommands, registeredCommandValidators, CommandValidator } from './decorators.js';
 export { registerHandlers } from "./registerDecorators.js";
 export { IHandler } from './IHandler.js';
 export { ICommand } from "./ICommand.js";
