@@ -25,7 +25,7 @@ export class MediatR {
     }
 }
 
-export { CommandHandler, Command, registeredCommands } from './decorators.js';
+export { CommandHandler, Command, registeredCommands, registeredCommandValidators } from './decorators.js';
 export { registerHandlers } from "./registerDecorators.js";
 export { IHandler } from './IHandler.js';
 export { ICommand } from "./ICommand.js"
