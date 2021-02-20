@@ -1,0 +1,19 @@
+  {
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 15",
+   
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "lib": ["es2020","DOM"],
+      "module": "ES2020",
+      "target": "es2020",
+      "moduleResolution": "node",
+      "rootDir": "./src",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "emitDecoratorMetadata": true
+    }  
+  }
