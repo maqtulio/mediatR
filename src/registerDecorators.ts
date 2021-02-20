@@ -24,6 +24,10 @@ export async function registerHandlers(folderPath: string) {
     await importFilesWithText(folderPath, ["CommandHandler", "extends IHandler"])
 }
 
+export async function registerCommands(folderPath: string) {
+    await importFilesWithText(folderPath, ["Command", "extends ICommand"])
+}
+
 async function importFilesWithText(folderPath: string, text: string[]): Promise<void> {
 
     const directories = await getDirectories(folderPath);

@@ -1,7 +1,10 @@
 import { IHandler } from '../src/IHandler.js';
-import { CommandHandler } from '../src/decorators.js';
+import { ICommand } from '../src/ICommand.js';
 
-export class TestCommand {
+import { Command, CommandHandler } from '../src/decorators.js';
+
+@Command()
+export class TestCommand extends  ICommand{
     public doNothing: string = "Please do nothing"
 }
 
