@@ -1,5 +1,5 @@
-import { ICommand } from '../../src/index.js';
-import { Command } from '../../src/decorators.js';
+import { ICommand } from '../../src/index';
+import { Command } from '../../src/decorators';
 
 @Command()
 export class DecoratedTestCommand extends ICommand {

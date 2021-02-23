@@ -1,4 +1,4 @@
-import { ICommand } from '../../src/index.js';
+import { ICommand } from '../../src/index';
 
 
 export class NonDecoratedTestCommand extends ICommand {

@@ -1,10 +1,9 @@
 import "reflect-metadata";
-import { ICommand } from "./ICommand.js";
-import { IHandler } from "./IHandler.js";
+import { ICommand } from "./ICommand";
+import { IHandler } from "./IHandler";
 
 export const registeredHandlers: { [key: string]: any } = {};
 export const registeredCommands: { [key: string]: any } = {};
-export const registeredCommandValidators: { [key: string]: any } = {}
 /**
  * @name commandClass CommandClass used on the handler to be decorated. 
  */

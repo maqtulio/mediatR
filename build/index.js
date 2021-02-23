@@ -1,6 +1,6 @@
 import "reflect-metadata";
-import { registeredHandlers, registeredCommands } from './decorators.js';
-import { ICommand } from "./ICommand.js";
+import { registeredHandlers, registeredCommands } from './decorators';
+import { ICommand } from "./ICommand";
 export class MediatR {
     /**
      * Mediator class.
@@ -19,7 +19,7 @@ export class MediatR {
         return new registeredHandlers[command.constructor.name]().Handle(command);
     }
 }
-export { CommandHandler, Command, registeredCommands, registeredCommandValidators } from './decorators.js';
-export { registerHandlers } from "./registerDecorators.js";
-export { IHandler } from './IHandler.js';
-export { ICommand } from "./ICommand.js";
+export { CommandHandler, Command, registeredCommands } from './decorators';
+export { registerHandlers } from "./registerDecorators";
+export { IHandler } from './IHandler';
+export { ICommand } from "./ICommand";

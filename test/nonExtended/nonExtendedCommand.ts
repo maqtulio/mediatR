@@ -1,4 +1,4 @@
-import { Command } from '../../src/decorators.js';
+import { Command } from '../../src/decorators';
 
 @Command()
 export class NonExtendedTestCommand {

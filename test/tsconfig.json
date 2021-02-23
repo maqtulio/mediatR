@@ -1,0 +1,18 @@
+{
+  "ts-node": {
+   "files": true
+  },
+  "compilerOptions": {
+   "jsx": "react",
+   "lib": ["es2020"],
+   "module": "commonjs",
+   "target": "es2020",
+   "sourceMap": false,
+   "inlineSources": false,
+   "esModuleInterop": true,
+   "resolveJsonModule": true,
+   "experimentalDecorators": true,
+   "emitDecoratorMetadata": true
+  },
+  "include": ["./**/*"]
+ }

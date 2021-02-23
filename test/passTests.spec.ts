@@ -1,8 +1,8 @@
-import { MediatR } from '../src/index.js';
-import { DecoratedTestCommand } from './passTest/testCommand.js';
+import { MediatR } from '../src/index';
+import { DecoratedTestCommand } from './passTest/testCommand';
 import assert from 'assert';
-import { registeredHandlers } from '../src/decorators.js';
-import { registerHandlers } from '../src/index.js';
+import { registeredHandlers } from '../src/decorators';
+import { registerHandlers } from '../src/index';
 
 describe('Pass test on handlers', function () {
   it('should register 1 handlers', async function () {

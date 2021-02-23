@@ -3,7 +3,6 @@ import { ICommand } from "./ICommand.js";
 import { IHandler } from "./IHandler.js";
 export const registeredHandlers = {};
 export const registeredCommands = {};
-export const registeredCommandValidators = {};
 /**
  * @name commandClass CommandClass used on the handler to be decorated.
  */

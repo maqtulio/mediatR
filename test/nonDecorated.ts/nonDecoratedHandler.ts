@@ -1,6 +1,6 @@
 import { IHandler, ICommand } from '../../src/index.js';
-import { CommandHandler } from '../../src/decorators.js';
-import { NonDecoratedTestCommand } from './nonDecoratedCommand.js';
+import { CommandHandler } from '../../src/decorators';
+import { NonDecoratedTestCommand } from './nonDecoratedCommand';
 
 @CommandHandler(NonDecoratedTestCommand)
 export class NonDecoratedTestCommandCommandHandler extends IHandler<NonDecoratedTestCommand, string, { error: string }> {

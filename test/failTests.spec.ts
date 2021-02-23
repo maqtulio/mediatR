@@ -1,7 +1,7 @@
 import assert from 'assert';
-import { MediatR } from '../src/index.js';
-import { registerHandlers } from '../src/index.js';
-import { NonDecoratedTestCommand } from './nonDecorated.ts/nonDecoratedCommand.js';
+import { MediatR } from '../src/index';
+import { registerHandlers } from '../src/index';
+import { NonDecoratedTestCommand } from './nonDecorated.ts/nonDecoratedCommand';
 
 describe('Fail test on handlers', function () {
   it('should throw an error on non decorated command', async function () {
