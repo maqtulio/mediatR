@@ -1,29 +1,34 @@
-import "reflect-metadata";
-import { ICommand } from "./ICommand.js";
-import { IHandler } from "./IHandler.js";
-export const registeredHandlers = {};
-export const registeredCommands = {};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Command = exports.CommandHandler = exports.registeredCommands = exports.registeredHandlers = void 0;
+require("reflect-metadata");
+const ICommand_1 = require("./ICommand");
+const IHandler_1 = require("./IHandler");
+exports.registeredHandlers = {};
+exports.registeredCommands = {};
 /**
  * @name commandClass CommandClass used on the handler to be decorated.
  */
-export const CommandHandler = (commandClass) => {
+const CommandHandler = (commandClass) => {
     return function (target) {
-        if (Object.getPrototypeOf(target.prototype).constructor.name !== IHandler.name) {
+        if (Object.getPrototypeOf(target.prototype).constructor.name !== IHandler_1.IHandler.name) {
             throw new Error(`Decorated commandHandler ${target.name} must extend IHandler`);
         }
         ;
-        registeredHandlers[commandClass.name] = target;
+        exports.registeredHandlers[commandClass.name] = target;
     };
 };
+exports.CommandHandler = CommandHandler;
 /**
  * @summary Command decorator.
  */
-export const Command = () => {
+const Command = () => {
     return function (target) {
-        if (Object.getPrototypeOf(target.prototype).constructor.name !== ICommand.name) {
+        if (Object.getPrototypeOf(target.prototype).constructor.name !== ICommand_1.ICommand.name) {
             throw new Error(`Decorated command ${target.name} must extend ICommand`);
         }
         ;
-        registeredCommands[target.name] = target;
+        exports.registeredCommands[target.name] = target;
     };
 };
+exports.Command = Command;

@@ -1,6 +1,6 @@
-import { IHandler, ICommand } from '../../src/index.js';
-import { CommandHandler } from '../../src/decorators.js';
-import { DecoratedTestCommand } from './testCommand.js';
+import { IHandler } from '../../src/index';
+import { CommandHandler } from '../../src/decorators';
+import { DecoratedTestCommand } from './testCommand';
 
 
 

@@ -3,7 +3,7 @@ import { registeredHandlers, registeredCommands } from './decorators';
 import { ICommand } from "./ICommand"
 
 export class MediatR {
-    registeredCommandsNames: string[] = [];
+    public registeredCommandsNames: string[] = [];
     /**
      * Mediator class.
      */

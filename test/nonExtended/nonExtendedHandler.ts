@@ -1,4 +1,4 @@
-import { IHandler } from '../../src/index.js';
+import { IHandler } from '../../src/index';
 import {  CommandHandler } from '../../src/decorators';
 import { NonExtendedTestCommand } from './nonExtendedCommand';
 

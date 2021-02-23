@@ -1,11 +1,11 @@
 import glob from 'glob';
 import fs from 'fs';
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 
-const __filenamePath = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filenamePath);
-const __filename = path.basename(__filenamePath)
+// const __filenamePath = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filenamePath);
+// const __filename = path.basename(__filenamePath)
 
 var getDirectories = function (src: string): Promise<string[]> {
     return new Promise((resolve, reject) => {
@@ -28,7 +28,7 @@ async function importFilesWithText(folderPath: string, text: string[]): Promise<
 
     const directories = await getDirectories(folderPath);
 
-    for (const handlerPath of directories.filter((el: any) => (el.includes(".js") && !el.includes("node_modules")))) {
+    for (const handlerPath of directories.filter((el: any) => (el.includes(".ts") && !el.includes("node_modules")))) {
         const handlerRelativePath = path.relative(__dirname, handlerPath);
         const handlerAbsolutePath = path.resolve(__dirname, handlerRelativePath);
 
@@ -38,7 +38,7 @@ async function importFilesWithText(folderPath: string, text: string[]): Promise<
 
         let file = fs.readFileSync(handlerAbsolutePath, 'utf8');
 
-        if (file.includes("__decorate") && text.every(el => file.includes(el))) {
+        if (file.includes("@") && text.every(el => file.includes(el))) {
             await import(handlerRelativePath)
         }
     }

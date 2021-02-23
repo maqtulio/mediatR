@@ -1,11 +1,11 @@
 {
   "name": "mediatr2",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Mediator to help CQRS implementation.",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha test.ts --require ts-node/register test/**/*.spec.ts",
     "build": "tsc",
     "coverage": "npm run build && nyc mocha",
     "start": ""
@@ -29,7 +29,6 @@
     "glob": "^7.1.6",
     "joi": "^17.4.0",
     "reflect-metadata": "^0.1.13",
-    "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
   },
   "devDependencies": {
@@ -40,6 +39,7 @@
     "ava": "^3.15.0",
     "mocha": "^8.3.0",
     "nyc": "^15.1.0",
-    "ts-mocha": "^8.0.0"
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^9.1.1"
   }
 }
