@@ -12,7 +12,6 @@ export class NonDecoratedTestCommandCommandHandler extends IHandler<NonDecorated
             //Complicated logic goes here.....
             return Promise.resolve(command.doNothing);
         } catch (error) {
-
             return Promise.resolve({ error: "some error" });
         }
     }

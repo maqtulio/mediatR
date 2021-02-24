@@ -1,9 +1,9 @@
 import glob from 'glob';
 import fs from 'fs';
-import path from "path";
+import path from 'path';
 // import { fileURLToPath } from "url";
 
-// const __filenamePath = fileURLToPath(import.meta.url);
+// const __filenamePath = fileURLToPath(path.resolve());
 // const __dirname = path.dirname(__filenamePath);
 // const __filename = path.basename(__filenamePath)
 
@@ -16,19 +16,17 @@ var getDirectories = function (src: string): Promise<string[]> {
                 resolve(res);
             }
         });
-    })
-
+    });
 };
 
 export async function registerHandlers(folderPath: string) {
-    await importFilesWithText(folderPath, ["CommandHandler", "extends IHandler"])
+    await importFilesWithText(folderPath, ['CommandHandler', 'IHandler', '__extends', '__decorate']);
 }
 
 async function importFilesWithText(folderPath: string, text: string[]): Promise<void> {
-
     const directories = await getDirectories(folderPath);
 
-    for (const handlerPath of directories.filter((el: any) => (el.includes(".ts") && !el.includes("node_modules")))) {
+    for (const handlerPath of directories.filter((el: any) => el.includes('.js') && !el.includes('node_modules'))) {
         const handlerRelativePath = path.relative(__dirname, handlerPath);
         const handlerAbsolutePath = path.resolve(__dirname, handlerRelativePath);
 
@@ -38,8 +36,8 @@ async function importFilesWithText(folderPath: string, text: string[]): Promise<
 
         let file = fs.readFileSync(handlerAbsolutePath, 'utf8');
 
-        if (file.includes("@") && text.every(el => file.includes(el))) {
-            await import(handlerRelativePath)
+        if (text.every((el) => file.includes(el))) {
+            await import(handlerRelativePath);
         }
     }
     return Promise.resolve();

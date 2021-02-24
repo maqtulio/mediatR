@@ -4,11 +4,12 @@
    
     "compilerOptions": {
       "experimentalDecorators": true,
-      "lib": ["ES2020","DOM"],
+      "lib": ["es2017", "es7", "es6", "dom"],
       "module": "CommonJS",
-      "target": "ES2020",
+      "target": "es5",
       "moduleResolution": "node",
-      "rootDir": "./src",
+      "declaration": true,
+      // "rootDir": "./src",
       "outDir": "./build",
       "strict": true,
       "esModuleInterop": true,
@@ -18,6 +19,6 @@
       "forceConsistentCasingInFileNames": true,
       "emitDecoratorMetadata": true
     },
-      "include": ["src/**/*"],
+      "include": ["src/**/*","test/**/*"],
       "exclude": ["node_modules", "**/*.spec.ts"]
   }
