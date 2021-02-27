@@ -1,11 +1,11 @@
 {
   "name": "mediatr2",
-  "version": "1.4.17",
+  "version": "1.4.18",
   "description": "Mediator to help CQRS implementation.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "scripts": {
-    "test": "mocha --extensions js --watch --watch-files src './build/test/**/*.js'",
+    "test": "tsc && mocha --extensions js --watch --watch-files src './build/test/*.js'",
     "deploy":"tsc && npm publish",
     "coverage": "npm run build && nyc mocha"
   },

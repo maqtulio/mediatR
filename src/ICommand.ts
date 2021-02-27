@@ -1,2 +1,1 @@
-export abstract class ICommand {
-}
+export abstract class ICommand<T> {}

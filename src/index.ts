@@ -13,7 +13,7 @@ export class MediatR {
         this.registeredCommandsNames = Object.keys(registeredCommands);
     }
 
-    public async Send(command: any): Promise<any> {
+    public async Send<T>(command: ICommand<T>): Promise<T> {
         if (!(command instanceof ICommand) || !Object.keys(this.registeredCommands).includes(command.constructor.name)) {
             throw new Error(`Please decorate your command and extend ICommand => ${command.constructor.name}.`);
         }
@@ -21,7 +21,7 @@ export class MediatR {
         if (!this.registeredCommandsNames.includes(command.constructor.name)) {
             throw new Error(`Handler for the command ${command.constructor.name} didn't get registred.`);
         }
-
+        
         return new this.registeredHandlers[command.constructor.name]().Handle(command);
     }
 }

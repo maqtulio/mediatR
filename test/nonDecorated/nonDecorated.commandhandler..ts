@@ -4,7 +4,6 @@ import { NonDecoratedTestCommand } from './nonDecoratedCommand';
 
 @CommandHandler(NonDecoratedTestCommand)
 export class NonDecoratedTestCommandCommandHandler extends IHandler<NonDecoratedTestCommand, string, { error: string }> {
-    protected ReturnsExample: string = "I'll return a string like this one";
 
     async Handle(command: NonDecoratedTestCommand): Promise<string | { error: string }> {
 

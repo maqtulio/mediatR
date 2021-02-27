@@ -20,13 +20,13 @@ var getDirectories = function (src: string): Promise<string[]> {
 };
 
 export async function registerHandlers(folderPath: string) {
-    await importFilesWithText(folderPath, ['CommandHandler', 'IHandler', '__extends', '__decorate']);
+    await importFilesWithText(folderPath, ['CommandHandler', 'IHandler']);
 }
 
 async function importFilesWithText(folderPath: string, text: string[]): Promise<void> {
     const directories = await getDirectories(folderPath);
 
-    for (const handlerPath of directories.filter((el: any) => el.includes('.js') && !el.includes('node_modules'))) {
+    for (const handlerPath of directories.filter((el: any) => el.includes('.commandhandler.js') && !el.includes('node_modules'))) {
         const handlerRelativePath = path.relative(__dirname, handlerPath);
         const handlerAbsolutePath = path.resolve(__dirname, handlerRelativePath);
 

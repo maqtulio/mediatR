@@ -1,5 +1,4 @@
 export abstract class IHandler<C, R, E>{
-    protected readonly abstract ReturnsExample: R;
     /**
      * Handle
      */

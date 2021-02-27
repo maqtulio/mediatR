@@ -5,25 +5,23 @@ import { registeredHandlers } from '../src/decorators';
 import { registerHandlers } from '../src/index';
 
 describe('Pass test on handlers', function () {
-  it('should register 1 handlers', async function () {
-    await registerHandlers("./test/passTest/")
-    assert.deepStrictEqual(Object.keys(registeredHandlers).length, 1);
-  });
+    it('should register 1 handlers', async function () {
+        await registerHandlers(__dirname + '/passTest');
+        assert.deepStrictEqual(Object.keys(registeredHandlers).length, 1);
+    });
 
-  it('should process a command', async function () {
-    await registerHandlers("./test/passTest/")
-    const command = new DecoratedTestCommand();
-    const response = await (new registeredHandlers[DecoratedTestCommand.name]()).Handle(command);
-    assert.deepStrictEqual(command.doNothing, response);
-  });
+    it('should process a command', async function () {
+        await registerHandlers(__dirname + '/passTest');
+        const command = new DecoratedTestCommand();
+        const response = await new registeredHandlers[DecoratedTestCommand.name]().Handle(command);
+        assert.deepStrictEqual(command.doNothing, response);
+    });
 
-  it('should process a command', async function () {
-    await registerHandlers("./test/passTest/")
-    const mediator = new MediatR();
-    const command = new DecoratedTestCommand();
-    const response = await mediator.Send(command)
-    assert.deepStrictEqual(command.doNothing, response);
-  });
-
+    it('should process a command', async function () {
+        await registerHandlers(__dirname + '/passTest');
+        const mediator = new MediatR();
+        const command = new DecoratedTestCommand();
+        const response = await mediator.Send<string>(command);
+        assert.deepStrictEqual(command.doNothing, response);
+    });
 });
-

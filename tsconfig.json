@@ -1,24 +1,24 @@
-  {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Node 15",
-   
-    "compilerOptions": {
-      "experimentalDecorators": true,
-      "lib": ["es2017", "es7", "es6", "dom"],
-      "module": "CommonJS",
-      "target": "es5",
-      "moduleResolution": "node",
-      "declaration": true,
-      // "rootDir": "./src",
-      "outDir": "./build",
-      "strict": true,
-      "esModuleInterop": true,
-      "noImplicitAny": false,
-      "skipLibCheck": true,
-      "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "emitDecoratorMetadata": true
-    },
-      "include": ["src/**/*","test/**/*"],
-      "exclude": ["node_modules", "**/*.spec.ts"]
-  }
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 15",
+  
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "module": "CommonJS",
+    "target": "es5",
+    "moduleResolution": "node",
+    "declaration": true,
+    // "rootDir": "./src",
+    "outDir": "./build",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true
+  },
+    "include": ["src/**/*","test/**/*","./test/*.ts"],
+    "exclude": ["node_modules"]
+}
